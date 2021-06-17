@@ -31,7 +31,7 @@ async def main(connection):
                 gzip_path=f"{window_path}/{pretty_session_safe}.txt.gz"
                 print(session_file_path)
                 lines_offset=0
-                lines_per_read=100000
+                lines_per_read=2000
                 async with iterm2.Transaction(connection) as txn:
                     with open(session_file_path, "w") as f, gzip.open(gzip_path,"wt") as gf:
                         try_reading_more_lines=True
